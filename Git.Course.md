@@ -539,6 +539,10 @@ Es un comando con gran número de opciones que permiten personalizar la salida d
 git show
 ```
 
+Se pueden utilizar herramientas gráficas para visualizar el historial y el contenido de los commits. 
+
+Por ejemplo, **gitk**, que se instala con Git, o en **VSC** se puede utilizar la extensión **Git Graph**
+
 ### APRENDIENDO A REFERENCIAR REVISIONES Y PATHS
 
 #### Anatomía de comandos típicos, referencias vs paths
