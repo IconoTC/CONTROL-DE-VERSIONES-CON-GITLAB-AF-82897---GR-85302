@@ -57,9 +57,10 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Estados de un archivo: untracked (U), tracked (modified (M), staged (A), committed)
   - add/commit/reset y status/log/show
 
-<!-- ### Día 2 (Martes 21 Octubre 2025)
+### Día 2 (Martes 21 Octubre 2025)
 
 - Primeros pasos con Git (2)
+
   - Modificación de ficheros
   - Mensajes de commit
 
@@ -85,9 +86,9 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 - Ficheros Markdown
   - Qué son
   - Sintaxis básica
-  - Vista previa en VSC / GitHub / GitLab -->
+  - Vista previa en VSC / GitHub / GitLab
 
-<!-- ### Día 3 (Miércoles 22 Octubre 2025)
+### Día 3 (Miércoles 22 Octubre 2025)
 
 - Git internals
   - Estructura de un repositorio git: .git
@@ -103,10 +104,10 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Añadir ficheros
     - Eliminar de la Staging Area (Index)
   - Eliminar ficheros: git rm
-    - Problemas con .gitignore
   - Cambiar nombre de ficheros: git mv
   - git blame
-  - Recapitulando: Git básico
+
+<!--
 
 ### Día 4 (Jueves 23 Octubre 2025)
 
@@ -117,21 +118,20 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - git checkout
   - git reset
   - Evolución de git checkout: Nuevos comandos git switch y git restore
-  - git checkout a nivel de archivo (restore)
-  - git reset a nivel de archivo -->
+    - git checkout y reset a nivel de archivo (restore)
 
-<!-- ### Día 5 (Lunes 27 Octubre 2025)
-
-- Reescribiendo la historia (2)
-  - rebase interactivo
+  - rebase interactivo (comentar por encima)
     - edit: modificando un commit
     - squash y fixup: fusionando commits
     - drop: eliminando un commit
-- Otros comandos
 
-  - git clean
-  - git revert
-  - git bisect
+- (Otros comandos)
+
+-->
+
+<!--
+
+### Día 5 (Lunes 27 Octubre 2025)
 
 - Trabajando en paralelo
 
@@ -147,23 +147,23 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - three-way merge
     - git rebase
 
-### Día 6 (Martes 28 Octubre 2025)
-
-- Trabajando en paralelo (2)
-
   - git stash
   - Resolución de conflictos
   - git cherry-pick
 
+- Trabajando en paralelo (2)
+
 - Etiquetas (tags)
   - Tags anotadas y tags ligeros
   - Crear, listar, eliminar
-- Worktrees
-- Patches
-  - Creación
-  - Aplicación -->
+- (Worktrees)
+- (Patches: Creación y aplicación)
 
-<!-- ### Día 7 (Miércoles 29 Octubre 2025)
+-->
+
+<!--
+
+### Día 6 (Martes 28 Octubre 2025)
 
 - Repositorios remotos
 
@@ -191,8 +191,11 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - Actualizar la rama con la rama main antes de hacer el merge
       - Resolución de conflictos en local
       - Eliminar la rama una vez hecho el merge
+-->
 
-- ### Día 8 (Jueves 30 Octubre 2025)
+<!--
+
+- ### Día 7 (Miércoles 29 Octubre 2025)
 
 - Flujos de trabajo (workflows)
 
@@ -214,10 +217,11 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - Tableros (Boards)
       - issues y proyectos; milestones
     - Wikis
-
 -->
 
-<!-- Reubicar
+<!--
+
+- ### Día 8 (Jueves 30 Octubre 2025)
 
 - GitLab (continuación)
   - GitLab Pages

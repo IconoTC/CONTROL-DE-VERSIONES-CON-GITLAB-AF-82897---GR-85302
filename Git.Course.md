@@ -913,6 +913,12 @@ Otros bloque permiten crear citas de texto:
 > Incluso puede incluir listas:
 ```
 
+Esto quedaría así:  
+
+> Esta es una cita de texto.
+> Puede abarcar varias líneas.
+> Incluso puede incluir listas:
+
 También podemos incluir listas ordenadas y desordenadas:
 
 ```markdown
