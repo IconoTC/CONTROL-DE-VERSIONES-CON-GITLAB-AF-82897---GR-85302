@@ -107,17 +107,17 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Cambiar nombre de ficheros: git mv
   - git blame
 
-<!--
-
 ### Día 4 (Jueves 23 Octubre 2025)
 
 - Reescribiendo la historia
+
   - Advertencia
   - git command --amend
     - Ref logs
   - git checkout
   - git reset
   - Evolución de git checkout: Nuevos comandos git switch y git restore
+
     - git checkout y reset a nivel de archivo (restore)
 
   - rebase interactivo (comentar por encima)
@@ -125,9 +125,11 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - squash y fixup: fusionando commits
     - drop: eliminando un commit
 
-- (Otros comandos)
+- Otros comandos
 
--->
+  - git clean
+  - git revert
+  - git bisect
 
 <!--
 
