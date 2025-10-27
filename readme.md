@@ -131,7 +131,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - git revert
   - git bisect
 
-<!--
 
 ### Día 5 (Lunes 27 Octubre 2025)
 
@@ -153,19 +152,15 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Resolución de conflictos
   - git cherry-pick
 
+<!--
+### Día 6 (Martes 28 Octubre 2025)
+
 - Trabajando en paralelo (2)
 
-- Etiquetas (tags)
-  - Tags anotadas y tags ligeros
-  - Crear, listar, eliminar
-- (Worktrees)
-- (Patches: Creación y aplicación)
-
--->
-
-<!--
-
-### Día 6 (Martes 28 Octubre 2025)
+  - (Patches: Creación y aplicación)
+  - Etiquetas (tags)
+    - Tags anotadas y tags ligeros
+    - Crear, listar, eliminar
 
 - Repositorios remotos
 
