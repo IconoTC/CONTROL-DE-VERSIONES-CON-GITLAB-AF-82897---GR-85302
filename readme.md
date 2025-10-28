@@ -131,7 +131,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - git revert
   - git bisect
 
-
 ### Día 5 (Lunes 27 Octubre 2025)
 
 - Trabajando en paralelo
@@ -143,6 +142,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Borrar ramas
     - Mover y renombrar ramas
   - Combinación de ramas: Merge y Rebase
+
     - git merge
       - fast-forward
       - three-way merge
@@ -152,7 +152,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Resolución de conflictos
   - git cherry-pick
 
-<!--
 ### Día 6 (Martes 28 Octubre 2025)
 
 - Trabajando en paralelo (2)
@@ -183,16 +182,17 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Pull requests (GitHub) / Merge requests (GitLab)
     - Flujo de trabajo típico
     - Revisión de código
+
+<!--
+
+- ### Día 7 (Miércoles 29 Octubre 2025)
+
+  - Pull requests (GitHub) / Merge requests (GitLab)
     - Resolución de conflictos en remoto
     - Buenas prácticas:
       - Actualizar la rama con la rama main antes de hacer el merge
       - Resolución de conflictos en local
       - Eliminar la rama una vez hecho el merge
--->
-
-<!--
-
-- ### Día 7 (Miércoles 29 Octubre 2025)
 
 - Flujos de trabajo (workflows)
 

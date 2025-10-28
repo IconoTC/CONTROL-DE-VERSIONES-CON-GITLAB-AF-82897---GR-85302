@@ -539,7 +539,7 @@ Es un comando con gran número de opciones que permiten personalizar la salida d
 git show
 ```
 
-Se pueden utilizar herramientas gráficas para visualizar el historial y el contenido de los commits. 
+Se pueden utilizar herramientas gráficas para visualizar el historial y el contenido de los commits.
 
 Por ejemplo, **gitk**, que se instala con Git, o en **VSC** se puede utilizar la extensión **Git Graph**
 
@@ -913,7 +913,7 @@ Otros bloque permiten crear citas de texto:
 > Incluso puede incluir listas:
 ```
 
-Esto quedaría así:  
+Esto quedaría así:
 
 > Esta es una cita de texto.
 > Puede abarcar varias líneas.
@@ -2155,6 +2155,12 @@ Se puede crear una rama a partir de un commit específico
 
 - `git branch nombre_rama <commit>`: Crea una nueva rama a partir del commit especificado
 - `git checkout -b nombre_rama <commit>`: Crea una nueva rama a partir del commit especificado y cambia a ella
+
+Para mover una rama existente a otro commit puede forzarse que se vuelva a crear en la posición deseada
+
+```shell
+git branch -f nombre_rama_existente <nuevo commit>
+```
 
 Ejemplos con checkout
 
