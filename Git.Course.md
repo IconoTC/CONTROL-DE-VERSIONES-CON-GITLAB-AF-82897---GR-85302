@@ -1,8 +1,12 @@
-# GIT (20h)
+# GIT (16h)
+
+Curso de Git - GitLab (16 horas = 8 sesiones de 2 horas)
+
+Debería ser 8 sesiones de 2:30 horas con un total de 20 horas
 
 ## Índice
 
-- [GIT (20h)](#git-20h)
+- [GIT (16h)](#git-16h)
   - [Índice](#índice)
   - [Formador](#formador)
   - [Día 1](#día-1)
@@ -100,14 +104,6 @@
       - [Patches](#patches)
       - [Tags](#tags)
         - [Operaciones con tags](#operaciones-con-tags)
-      - [Worktrees](#worktrees)
-        - [Casos de uso comunes](#casos-de-uso-comunes)
-        - [Operaciones básicas con worktrees](#operaciones-básicas-con-worktrees)
-        - [Comandos principales](#comandos-principales)
-        - [Ejemplo práctico](#ejemplo-práctico)
-        - [Limitaciones y consideraciones](#limitaciones-y-consideraciones)
-        - [Integración con IDEs](#integración-con-ides)
-        - [Comandos relacionados útiles](#comandos-relacionados-útiles)
   - [Día 4](#día-4)
     - [TRABAJANDO EN PARALELO: REPOSITORIOS REMOTOS](#trabajando-en-paralelo-repositorios-remotos)
       - [¿Qué son los repositorios remotos?](#qué-son-los-repositorios-remotos)
@@ -128,36 +124,57 @@
         - [GitHub Flow, Feature Branching, Trunk Based Development](#github-flow-feature-branching-trunk-based-development)
         - [Ship-show-ask](#ship-show-ask)
     - [BUENAS PRÁCTICAS](#buenas-prácticas)
-    - [GitHub](#github)
-      - [Introducción. ¿Qué es GitHub?](#introducción-qué-es-github)
+    - [GitLab](#gitlab)
+      - [Introducción. ¿Qué es GitLab?](#introducción-qué-es-gitlab)
       - [Archivos esenciales del repositorio](#archivos-esenciales-del-repositorio)
-      - [GitHub CLI](#github-cli)
+      - [GitLab CLI](#gitlab-cli)
         - [Crear un repositorio](#crear-un-repositorio)
-        - [Otros comandos](#otros-comandos)
-      - [GITHUB PAGES](#github-pages)
-        - [Características principales de GitHub Pages](#características-principales-de-github-pages)
-        - [Cómo crear un sitio web con GitHub Pages](#cómo-crear-un-sitio-web-con-github-pages)
-      - [Sitios Web y GitHub Pages](#sitios-web-y-github-pages)
+      - [GITLab PAGES](#gitlab-pages)
+        - [Características principales de GitLab Pages](#características-principales-de-gitlab-pages)
+        - [Cómo crear un sitio web con GitLab Pages](#cómo-crear-un-sitio-web-con-gitlab-pages)
+      - [Sitios Web y GitLab Pages](#sitios-web-y-gitlab-pages)
   - [Día 5](#día-5)
-    - [GitHub (Continuación)](#github-continuación)
-      - [GITHUB PAGES. Practicas](#github-pages-practicas)
-        - [Crear un sitio web con Astro y publicarlo en GitHub Pages](#crear-un-sitio-web-con-astro-y-publicarlo-en-github-pages)
-      - [GitHub CLI (continuación)](#github-cli-continuación)
-      - [Releases (Liberaciones)](#releases-liberaciones)
-        - [Tipos de releases](#tipos-de-releases)
-        - [Relación entre tags y releases](#relación-entre-tags-y-releases)
-        - [Buenas prácticas y opciones para releases](#buenas-prácticas-y-opciones-para-releases)
-        - [Flujo de trabajo para releases con Git usando GitFlow](#flujo-de-trabajo-para-releases-con-git-usando-gitflow)
-        - [Gestión de releases en las plataformas GitHub/GitLab](#gestión-de-releases-en-las-plataformas-githubgitlab)
-          - [Crear una release en GitHub](#crear-una-release-en-github)
-          - [Crear una release con el GitLab CLI](#crear-una-release-con-el-gitlab-cli)
+    - [Releases (Liberaciones)](#releases-liberaciones)
+      - [Tipos de releases](#tipos-de-releases)
+      - [Relación entre tags y releases](#relación-entre-tags-y-releases)
+      - [Buenas prácticas y opciones para releases](#buenas-prácticas-y-opciones-para-releases)
+      - [Flujo de trabajo para releases con Git usando GitFlow](#flujo-de-trabajo-para-releases-con-git-usando-gitflow)
+      - [Gestión de releases en las plataformas GitHub/GitLab](#gestión-de-releases-en-las-plataformas-githubgitlab)
+        - [Crear una release en GitHub (será similar en GitLab)](#crear-una-release-en-github-será-similar-en-gitlab)
+        - [Crear una release con el GitLab CLI](#crear-una-release-con-el-gitlab-cli)
     - [CI/CD](#cicd)
+      - [Herramientas de CI/CD a nivel servidor](#herramientas-de-cicd-a-nivel-servidor)
+      - [CI/CD en GitLab. GitHub Pipelines](#cicd-en-gitlab-github-pipelines)
+        - [Configuración de un pipeline](#configuración-de-un-pipeline)
+        - [Artefactos y dependencias entre jobs](#artefactos-y-dependencias-entre-jobs)
+        - [Test values and variables](#test-values-and-variables)
+        - [Prepare deployment](#prepare-deployment)
+        - [Despliegue automático](#despliegue-automático)
+        - [Gestión de variables y secretos](#gestión-de-variables-y-secretos)
+        - [Buenas prácticas en CI/CD en GitLLab](#buenas-prácticas-en-cicd-en-gitllab)
   - [Apéndices](#apéndices)
+    - [Worktrees](#worktrees)
+      - [Casos de uso comunes](#casos-de-uso-comunes)
+      - [Operaciones básicas con worktrees](#operaciones-básicas-con-worktrees)
+      - [Comandos principales](#comandos-principales)
+      - [Ejemplo práctico](#ejemplo-práctico)
+      - [Limitaciones y consideraciones](#limitaciones-y-consideraciones)
+      - [Integración con IDEs](#integración-con-ides)
+      - [Comandos relacionados útiles](#comandos-relacionados-útiles)
     - [SUB-PROYECTOS](#sub-proyectos)
       - [Submodules](#submodules)
         - [Creación de un submodule](#creación-de-un-submodule)
           - [Clonado de un repositorio con submodules: inicialización](#clonado-de-un-repositorio-con-submodules-inicialización)
         - [Actualizaciones de un submodule](#actualizaciones-de-un-submodule)
+    - [Integración continua a nivel local](#integración-continua-a-nivel-local)
+      - [Análisis estático de código: ESLint y Prettier](#análisis-estático-de-código-eslint-y-prettier)
+      - [Instalación y configuración de Prettier](#instalación-y-configuración-de-prettier)
+      - [Instalación y configuración de ESLint](#instalación-y-configuración-de-eslint)
+      - [Git Hooks](#git-hooks)
+        - [Husky](#husky)
+      - [Instalación y configuración de Husky](#instalación-y-configuración-de-husky)
+      - [Ejemplos de scrips para Husky](#ejemplos-de-scrips-para-husky)
+    - [Taller GitLab PAGES. Crear un sitio web con Astro y publicarlo en GitLab Pages](#taller-gitlab-pages-crear-un-sitio-web-con-astro-y-publicarlo-en-gitlab-pages)
 
 ## Formador
 
@@ -2392,149 +2409,6 @@ Para usar un tag, se puede hacer checkout a un tag
 git checkout v1.0
 ```
 
-#### Worktrees
-
-Los worktrees son una funcionalidad de Git que apareció en la versión 2.5 (2015) y permite tener múltiples working areas asociadas a un mismo repositorio. Cada worktree tiene su propia rama y su propio HEAD, pero comparten el mismo historial de commits.
-
-Esta característica es especialmente útil cuando necesitas trabajar en múltiples ramas simultáneamente sin tener que hacer constantemente `git checkout` o `git stash`.
-
-##### Casos de uso comunes
-
-- **Desarrollo paralelo**: Trabajar en una nueva feature mientras mantienes la posibilidad de hacer hotfixes en main
-- **Testing**: Probar diferentes versiones del código sin afectar tu trabajo actual
-- **Code review**: Revisar pull requests mientras continúas desarrollando
-- **Builds**: Mantener un worktree dedicado para builds de producción
-
-##### Operaciones básicas con worktrees
-
-Para crear un worktree se utiliza el comando `git worktree add`:
-
-```shell
-git worktree add <directorio> <rama>
-```
-
-Es una buena práctica que el directorio del worktree esté fuera del directorio del repositorio principal:
-
-```shell
-git worktree add ../feature/feature-xyz feature/feature-xyz
-```
-
-##### Comandos principales
-
-**Crear un nuevo worktree:**
-
-```shell
-# Crear worktree en directorio específico con rama existente
-git worktree add ../hotfix hotfix/bug-123
-
-# Crear worktree con nueva rama
-git worktree add -b nueva-feature ../feature main
-
-# Crear worktree temporal (se eliminará automáticamente)
-git worktree add --detach ../temp HEAD~2
-```
-
-**Listar worktrees existentes:**
-
-```shell
-git worktree list
-git worktree list --porcelain  # Formato más detallado
-```
-
-**Información de un worktree:**
-
-```shell
-# Muestra el path, la rama y el commit
-git worktree list -v
-```
-
-**Eliminar un worktree:**
-
-```shell
-# Desde el repositorio principal
-git worktree remove ../feature/feature-xyz
-
-# Forzar eliminación (incluso con cambios no guardados)
-git worktree remove --force ../feature/feature-xyz
-```
-
-**Limpiar worktrees eliminados manualmente:**
-
-```shell
-git worktree prune
-```
-
-**Mover un worktree:**
-
-```shell
-git worktree move ../old-location ../new-location
-```
-
-##### Ejemplo práctico
-
-```shell
-# Situación inicial: trabajando en feature-login
-git branch
-# * feature-login
-#   main
-
-# Llega un bug crítico que hay que arreglar en main
-# En lugar de hacer stash y checkout, creamos un worktree
-git worktree add ../hotfix main
-
-# Cambiamos al directorio del hotfix
-cd ../hotfix
-
-# Trabajamos en el hotfix
-echo "bug fix" >> bugfix.txt
-git add bugfix.txt
-git commit -m "Fix critical bug"
-
-# Subimos el hotfix
-git push origin main
-
-# Volvemos a nuestro trabajo original
-cd ../proyecto-principal
-
-# El worktree de hotfix ya no es necesario
-git worktree remove ../hotfix
-```
-
-##### Limitaciones y consideraciones
-
-- **No se pueden tener múltiples worktrees** en la misma rama (excepto en modo detached)
-- **Los hooks se comparten** entre todos los worktrees
-- **La configuración se comparte** entre todos los worktrees
-- **Los reflog son independientes** para cada worktree
-- **Cuidado con operaciones destructivas** como `git reset --hard` que afectan solo al worktree actual
-
-##### Integración con IDEs
-
-Muchos IDEs modernos soportan worktrees:
-
-- **VS Code**: Detecta automáticamente los worktrees y permite alternar entre ellos
-- **IntelliJ IDEA**: Soporte nativo para worktrees desde la versión 2021.2
-- **Vim/Neovim**: Plugins como `vim-fugitive` tienen soporte para worktrees
-
-##### Comandos relacionados útiles
-
-```shell
-# Ver en qué worktree estamos
-git rev-parse --show-toplevel
-
-# Ver información del repositorio principal
-git worktree list | head -1
-
-# Crear worktree temporal para builds
-git worktree add --detach ../build-temp v1.2.3
-cd ../build-temp
-npm run build
-cd ../proyecto-principal
-git worktree remove ../build-temp
-```
-
-Los worktrees son una herramienta poderosa que puede mejorar significativamente la productividad cuando se necesita trabajar con múltiples ramas de forma simultánea, evitando la necesidad de múltiples clones del repositorio.
-
 ## Día 4
 
 ### TRABAJANDO EN PARALELO: REPOSITORIOS REMOTOS
@@ -2947,24 +2821,25 @@ Referencias
 - Usar branches, feature-branching
 - Fijar un workflow común
 
-### GitHub
+### GitLab
 
-- **Website**: [https://github.com](https://github.com/about)
-- **Documentación**: [https://docs.github.com/en](https://docs.github.com/es)
+- **Website**: [https://about.gitlab.com/](https://about.gitlab.com/)
+- **Documentación**: [https://docs.gitlab.com/](https://docs.gitlab.com/)
 
-#### Introducción. ¿Qué es GitHub?
+#### Introducción. ¿Qué es GitLab?
 
-GitHub es un servicio en línea que permite a los desarrolladores colaborar en el código. A menudo se le conoce como un sitio web de programación social. Aquí tienes algunos puntos clave:
+GitLab es un servicio en línea que permite a los desarrolladores colaborar en el código. A menudo se le conoce como un sitio web de programación social. Aquí tienes algunos puntos clave:
 
-- **Hosting de Control de versiones** (Cloud Repository): GitHub se integra con Git, lo que le permite configurar repositorios remotos, enviar cambios y obtener actualizaciones.
-- **Colaboración** (Collaborative Development): GitHub proporciona herramientas para rastrear cambios, asignar problemas e implementar código, lo que facilita que los equipos trabajen juntos.
-- **Gestión de proyectos** (Project Management): incluye herramientas de gestión de proyectos como tableros Kanban para organizar proyectos de desarrollo.
+- **Hosting de Control de versiones** (Cloud Repository): GitLab se integra con Git, lo que le permite configurar repositorios remotos, enviar cambios y obtener actualizaciones.
+- **Colaboración** (Collaborative Development): GitLab proporciona herramientas para rastrear cambios, asignar problemas e implementar código, lo que facilita que los equipos trabajen juntos.
+- **CI/CD** (Continuous Integration/Continuous Deployment): incluye herramientas de integración y entrega continua que permiten automatizar el proceso de pruebas y despliegue de aplicaciones.
 
-Esto hace de GitHub una plataforma poderosa para administrar y colaborar en proyectos de desarrollo.
+Esto hace de GitLab una plataforma poderosa para administrar y colaborar en proyectos de desarrollo.
 
-- Hosting de Control de versiones[^1]
+- Hosting de Control de versiones
 
-  - Setup de repositorios remotos / Clonar (Clone)
+  - Setup de repositorios remotos (projects) / Clonar (Clone)
+  - Posibilidad de agrupar repositorios en grupos y subgrupos
   - Publicando (Push): Enviar cambios
   - Obteniendo (Pull): Obtener actualizaciones = fetch + merge
     - Ramas remotas
@@ -2972,81 +2847,109 @@ Esto hace de GitHub una plataforma poderosa para administrar y colaborar en proy
     - Enviar/recibir Tags al/del remoto
   - Forks
 
-- Colaboración en Github
+- Colaboración en GitLab
 
-  - Pull Request
+  - Merge Request
     - Configuración de las rama main: Protección de ramas
     - Revisión de código
     - Actualización desde las ramas feature
-  - Pull request desde forks
-  - Pull request desde GitHub
+  - Merge request desde forks
+  - Merge request desde GitLab
   - Tags y Releases
-  - Markdown + Markdown GitHub Addons (GFM = GitHub Flavored Markdown)
+  - Markdown + Markdown GitLab Addons (GFM = GitLab Flavored Markdown)
 
-- Gestión de proyectos en GitHub
+- Gestión de proyectos en GitLab
 
   - Issues
     - Etiquetas (Labels)
     - Asignación (Assignees)
     - Milestones
     - Templates
-  - Proyectos (Projects)
-    - Tableros Kanban
-    - Automatización
-  - Repository Insights
-    - Pulse
-    - Contributors
-    - Commits
-    - Code frequency
-    - Dependency graph
-    - Network
-    - Forks
+  - ToDo Lists
+  - Milestones
+  - Operations
 
-- GitHub social
+- GitLab social
 
   - Seguidores (Followers)
   - Estrellas (Stars)
   - Discusiones (Discussions)
-  - Watchers - Notificaciones (Notifications)
-  - Gists
-  - Wikis
-  - Pages
+  - Snippets
+  - Wikis (Project/Plan/Wiki)
+  - Pages (Project/Deploy/Pages)
 
-- Github Actions
+- GitLab CI/CD: Pipelines
   - Introducción
   - Workflow. Partes y sintaxis
   - Configuración y ejecución de un workflow
   - Construir la imagen con Docker
   - Secretos
 
-[^1]: GitHub utiliza Git como sistema de control de versiones, pero también soporta otros sistemas como Subversion (SVN) a través de una capa de compatibilidad.
-
 #### Archivos esenciales del repositorio
 
-- Archivo README : Funciona como la página principal de tu repositorio, explicando la función del proyecto y su utilidad. Puede ubicarse en la raíz, en la carpeta docs o en .github.
+- Archivo README : Funciona como la página principal de tu repositorio, explicando la función del proyecto y su utilidad. Puede ubicarse en la raíz, en la carpeta docs o en .GitLab.
 - Archivo de licencia : Define cómo los desarrolladores pueden usar, modificar y distribuir el software. Debe estar en la carpeta raíz.
-  Código de conducta : Establece el comportamiento esperado de los colaboradores. GitHub proporciona plantillas para ello.
-- Política de seguridad : Especifica el soporte de seguridad y dónde reportar vulnerabilidades. Puede ubicarse en la raíz, en la carpeta docs o en .github.
+  Código de conducta : Establece el comportamiento esperado de los colaboradores. GitLab proporciona plantillas para ello.
+- Política de seguridad : Especifica el soporte de seguridad y dónde reportar vulnerabilidades. Puede ubicarse en la raíz, en la carpeta docs o en .GitLab.
 - Contributing.md : proporciona pautas sobre cómo contribuir al proyecto, incluidas las contribuciones aceptadas y los pasos para crear problemas.
-- Support.md : Informa a los usuarios sobre cómo obtener soporte para el proyecto. Puede ubicarse en la raíz, en la carpeta de documentación o en la carpeta .github.
+- Support.md : Informa a los usuarios sobre cómo obtener soporte para el proyecto. Puede ubicarse en la raíz, en la carpeta de documentación o en la carpeta .GitLab.
 - Archivo CODEOWNERS : enumera a los individuos responsables de un código específico en el repositorio, garantizando que sean notificados de los cambios y las solicitudes de extracción.
 
 Estos archivos ayudan a organizar y administrar su repositorio de manera efectiva, lo que hace que sea más fácil para otros comprender, contribuir y usar su proyecto.
 
-#### GitHub CLI
+#### GitLab CLI
 
-- **Website**: [https://cli.github.com/](https://cli.github.com/)
-- **Documentación**: [https://cli.github.com/manual/](https://cli.github
+- **Website**: [GitLab CLI](https://gitlab.com/gitlab-org/cli)
+- **Releases**: [https://gitlab.com/gitlab-org/cli/-/releases/](https://gitlab.com/gitlab-org/cli/-/releases/)
 
-Instalamos la aplicación descargada desde la web oficial y comprobamos la instalación con el comando
+Instalamos la aplicación descargada desde la ultima release disponible (1.74.0) la versión apropiada para el SO (glab_1.74.0_Windows_x86_64_installer.exe).
+Ejecutamos el instalador y seguimos los pasos del asistente.
+
+Si estaba abierto Visual Studio Code, es necesario reiniciarlo para que detecte el nuevo comando glab en el path del sistema.
+
+Comprobamos la instalación con el comando
 
 ```shell
-gh --version
+glab --version
 ```
 
-Si estaba abierto Visual Studio Code, es necesario reiniciarlo para que detecte el nuevo comando gh en el path del sistema.
+Si ejecutamos el comando nos muestra las opciones disponibles
 
-Ejecutamos el comando `gh auth login`, para iniciar sesión con nuestra cuenta en GitHub, y seguimos las instrucciones directamente desde la aplicación de consola, donde nos preguntará
+```shell
+    alias [command] [--flags]                 Create, list, and delete aliases.
+    api <endpoint> [--flags]                  Make an authenticated request to the GitLab API.
+    auth <command> [command]                  Manage glab's authentication state.
+    changelog <command> [command] [--flags]   Interact with the changelog API.
+    check-update                              Check for latest glab releases.
+    ci <command> [command] [--flags]          Work with GitLab CI/CD pipelines and jobs.
+    cluster <command> [command] [--flags]     Manage GitLab Agents for Kubernetes and their clusters.
+    completion [--flags]                      Generate shell completion scripts.
+    config [command] [--flags]                Manage glab settings.
+    deploy-key <command> [command] [--flags]  Manage deploy keys.
+    duo <command> prompt [command]            Work with GitLab Duo
+    help [command]                            Help about any command
+    incident [command] [--flags]              Work with GitLab incidents.
+    issue [command] [--flags]                 Work with GitLab issues.
+    iteration <command> [command] [--flags]   Retrieve iteration information.
+    job <command> [command] [--flags]         Work with GitLab CI/CD jobs.
+    label <command> [command] [--flags]       Manage labels on remote.
+    mcp <command> [command]                   Work with a Model Context Protocol (MCP) server. (EXPERIMENTAL)
+    mr <command> [command] [--flags]          Create, view, and manage merge requests.
+    opentofu <command> [command] [--flags]    Work with the OpenTofu or Terraform integration.
+    release <command> [command] [--flags]     Manage GitLab releases.
+    repo <command> [command] [--flags]        Work with GitLab repositories and projects.
+    schedule <command> [command] [--flags]    Work with GitLab CI/CD schedules.
+    securefile <command> [command] [--flags]  Manage secure files for a project.
+    snippet <command> [command] [--flags]     Create, view and manage snippets.
+    ssh-key <command> [command] [--flags]     Manage SSH keys registered with your GitLab account.
+    stack <command> [command] [--flags]       Create, manage, and work with stacked diffs. (EXPERIMENTAL)
+    token [command] [--flags]                 Manage personal, project, or group tokens
+    user <command> [command] [--flags]        Interact with a GitLab user account.
+    variable [command] [--flags]              Manage variables for a GitLab project or group.
+    version                                   Show version information for glab.
+```
+
+Ejecutamos el comando `glab auth login`, para iniciar sesión con nuestra cuenta en GitHub, y seguimos las instrucciones directamente desde la aplicación de consola, donde nos preguntará
 
 - si queremos utilizar nuestro GitHub.com o
 - cuál es nuestro protocolo preferido para las operaciones de Git, HTTPS o SSH
@@ -3054,204 +2957,132 @@ Ejecutamos el comando `gh auth login`, para iniciar sesión con nuestra cuenta e
 - cómo queremos autenticar GitHub CLI, con el navegador o con un token de acceso personal.
 
 ```shell
-gh auth login
-? Where do you use GitHub?  [Use arrows to move, type to filter]
-> GitHub.com
-  Other
-? What is your preferred protocol for Git operations?  [Use arrows to move, type to filter]
-> HTTPS
-  SSH
-? Authenticate Git with your GitHub credentials?  [Use arrows to move, type to filter]
-> Yes
-  No
-? How would you like to authenticate GitHub CLI?  [Use arrows to move, type to filter]
-
+glab auth login
+? What GitLab instance do you want to sign in to?  [Use arrows to move, type to filter]
+> gitlab.com
+  GitLab Self-Managed or GitLab Dedicated instance
+? How would you like to sign in?  [Use arrows to move, type to filter]
+  Token
+> Web
+? What domains does this host use for the container registry and image dependency proxy? (gitlab.com,gitlab.com:443,registry.gitlab.com)
 ```
 
-Si Elegimos iniciar sesión con el navegador, nos proporcionará una URL para abrir en el navegador y un código de dispositivo de un solo uso que debemos copiar. Abrimos el navegador en la URL proporcionada y luego pegamos el código que copiamos anteriormente y presionamos continuar.
+Si Elegimos iniciar sesión con el navegador, nos abrirá una página web para iniciar sesión en GitLab, haciéndolo automáticamente si el navegador tiene cacheadas nuestras credenciales.
 Si aún no lo habíamos hecho, iniciaremos sesión con nuestro nombre de usuario y contraseña de GitHub y autorizaremos a GitHub CLI para acceder a nuestra cuenta de GitHub.
 
-Ahora que hemos hecho eso, volveremos a la aplicación de consola, donde después de un tiempo, recibirás la confirmación de que has iniciado sesión correctamente.
-
-Solo para probar que todo funcionó, ejecuta el comando `gh repo list`. Deberías ver la lista de tus propios repositorios de GitHub, y si tienes muchos, puedes limitar el número de resultados con la opción --limit, por ejemplo:
+Ahora que hemos hecho eso, volveremos a la aplicación de consola, y continuamos la autenticación, hasta recibir la confirmación de que has iniciado sesión correctamente.
 
 ```shell
-gh repo list --limit 5
+? Choose default Git protocol:  [Use arrows to move, type to filter]
+  SSH
+> HTTPS
+  HTTP
+? Authenticate Git with your GitLab credentials? (Y/n)
+- glab config set -h gitlab.com git_protocol https
+✓ Configured Git protocol.
+- glab config set -h gitlab.com api_protocol https
+✓ Configured API protocol.
+✓ Logged in as alce65
+✓ Configuration saved to C:\Users\Alejandro\.config\glab-cli/config.yml
 ```
 
-(Por defecto el valor de --limit es 30 )
+Solo para probar que todo funcionó, ejecuta el comando `glab repo list`. Deberías ver la lista de tus propios repositorios de GitLab, y si tienes muchos, puedes limitar el número de resultados con la opción --limit, por ejemplo:
+
+```shell
+glab repo list -P 5
+```
+
+(Por defecto el valor de -P es 30 por página )
 
 ##### Crear un repositorio
 
-Eel comando `gh repo create` permite crear un nuevo repositorio en GitHub. Puedes seguir un asistente interactivo para configurar el repositorio con la configuración que desees.
+El comando `glab repo create` permite crear un nuevo repositorio en GitLab. En la ayuda del comando (`glab repo create --help`) se muestran las distintas opciones disponibles para crear el repositorio
 
-- Asistente interactivo : Al ejecutar gh repo create sin argumentos, se inicia un asistente que te guía a través de las opciones para crear el repositorio, como el nombre, la visibilidad (público o privado) y si deseas clonarlo localmente.
+. Puedes seguir un asistente interactivo para configurar el repositorio con la configuración que desees.
+
+- Asistente interactivo : Al ejecutar glab repo create sin argumentos, se inicia un asistente que te guía a través de las opciones para crear el repositorio, como el nombre y si deseas clonarlo localmente.
 
 Las opciones de comando permiten hacerlo de forma no interactiva, indicando los valores deseados directamente en la línea de comandos. Por ejemplo, puedes usar --public o --private para establecer la visibilidad del repositorio, y --clone para clonarlo localmente después de crearlo.
 
 - Ejemplo de creación rápida : Para crear un repositorio público llamado my-new-repo y clonarlo localmente, puedes usar el siguiente comando:
 
 ```shell
-gh repo create my-new-repo --public --clone
+gh repo create my-new-repo -P
 ```
 
-Comandos alternativos : También puedes crear un repositorio desde tu directorio local usando comandos como `gh repo create another-project --private --source=.`
+- Create a repository under your account using the current directory name: `glab repo create`
+- Create a repository under a group using the current directory name: `glab repo create --group glab-cli`
+- Create a repository with a specific name: `glab repo create my-new-repo`
+- Create a repository for a group: `glab repo create --group glab-cli/my-new-repo`
 
-Esto creará un repositorio privado llamado another-project en GitHub y lo vinculará al directorio actual.
+Entre los comandos del CLI de GitLab para manejar repositorios, también están los siguientes:
 
-Entre los comandos del CLI de GitHub para manejar repositorios, también están los siguientes:
+- `glab repo clone <repository>` : Clona un repositorio existente de GitLab a tu máquina local.
+- `glab repo archive` : Obtiene un archivo del repositorio.
+- `glab repo clone` : Clona un repositorio o proyecto de GitLab.
+- `glab repo contributors` : Obtiene la lista de contribuyentes del repositorio.
+- `glab repo create` : Crea un nuevo proyecto/repositorio de GitLab.
+- `glab repo delete` : Elimina un repositorio existente en GitLab.
+- `glab repo fork` : Crea un fork de un repositorio de GitLab.
+- `glab repo list` : Obtiene la lista de repositorios.
+- `glab repo mirror` : Realiza un espejo de un proyecto o repositorio en la ubicación especificada, utilizando métodos de extracción o envío.
+- `glab repo publish` : Publica recursos en el proyecto.
+- `glab repo search` : Busca repositorios y proyectos de GitLab por nombre.
+- `glab repo transfer` : Transfiere un repositorio a un nuevo espacio de nombres.
+- `glab repo update` : Actualiza un proyecto o repositorio de GitLab existente.
+- `glab repo view` : Muestra un proyecto o repositorio.
 
-- `gh repo clone <repository>` : Clona un repositorio existente de GitHub a tu máquina local.
-- `gh repo fork <repository>` : Crea un fork de un repositorio existente en tu cuenta de GitHub.
-- `gh repo view <repository>` : Muestra información detallada sobre un repositorio específico
-- `gh repo delete <repository>` : Elimina un repositorio existente de tu cuenta de GitHub.
-- `gh repo list [<owner>]` : Lista los repositorios de un usuario u organización específica.
-- `gh repo rename <repository> <new-name>` : Cambia el nombre de un repositorio existente en tu cuenta de GitHub.
-- `gh repo archive <repository>` : Archiva un repositorio existente en tu cuenta de GitHub, haciéndolo de solo lectura.
-- `gh repo unarchive <repository>` : Desarchiva un repositorio previamente archivado en tu cuenta de GitHub, restaurando su estado activo.
-- `gh repo transfer <repository> <new-owner>` : Transfiere la propiedad de un repositorio a otro usuario u organización en GitHub.
-- `gh repo list --visibility <visibility>` : Filtra los repositorios listados por su visibilidad (público, privado o interno).
+#### GITLab PAGES
 
-##### Otros comandos
+GitLab Pages es un servicio de alojamiento web estático que ofrece GitLab para publicar sitios web directamente desde un repositorio de GitLab. Es una forma sencilla y gratuita de alojar páginas web personales, blogs, documentación de proyectos y sitios web de organizaciones.
 
-CORE COMMANDS
+Podemos encontrar muchos ejemplos de sitios web creados con GitLab Pages en la [página de ejemplos](https://gitlab.com/pages) de GitLab.
 
-- browse: Open repositories, issues, pull requests, and more in the browser
-- codespace: Connect to and manage codespaces
-- gist: Manage gists
-- issue: Manage issues
-- org: Manage organizations
-- pr: Manage pull requests
-- project: Work with GitHub Projects.
-- release: Manage releases
+##### Características principales de GitLab Pages
 
-GITHUB ACTIONS COMMANDS
+- **Fácil de usar**: Puedes crear y publicar un sitio web con solo unos pocos clics desde la interfaz de GitLab.
+- **Integración con GitLab**: Los sitios web se generan directamente desde los archivos en tu repositorio, lo que facilita la actualización y el mantenimiento del contenido.
+- **Soporte para generadores de sitios estáticos**: GitLab Pages tiene soporte para generadores de sitios estáticos que permite crear sitios web a partir de archivos Markdown y plantillas.
+- **Personalización de dominios**: Puedes usar un dominio personalizado para tu sitio web de GitLab Pages.
+- **HTTPS**: GitLab Pages ofrece soporte para HTTPS, lo que garantiza que tu sitio web sea seguro.
+- **Gratuito**: GitLab Pages es un servicio gratuito, lo que lo hace accesible para desarrolladores y proyectos de código abierto.
 
-- cache: Manage GitHub Actions caches
-- run: View details about workflow runs
-- workflow: View details about GitHub Actions workflows
+##### Cómo crear un sitio web con GitLab Pages
 
-#### GITHUB PAGES
+La forma de crear los sitios es menos intuitiva que en GitHub Pages, ya que GitLab utiliza en todos los casos su sistema de CI/CD para generar y publicar los sitios web. Sin embargo, para crear fácilmente el pipeline ofrece un asistente en cuatro pasos que genera automáticamente el archivo `.gitlab-ci.yml` necesario para construir y desplegar el sitio web.
 
-GitHub Pages es un servicio de alojamiento web estático que ofrece GitHub para publicar sitios web directamente desde un repositorio de GitHub. Es una forma sencilla y gratuita de alojar páginas web personales, blogs, documentación de proyectos y sitios web de organizaciones.
+Editando luego este archivo sera sencillo modificar la configuración del pipeline para adaptarlo a nuestras necesidades.
 
-Podemos encontrar muchos ejemplos de sitios web creados con GitHub Pages en la [página de ejemplos](https://github.com/collections/github-pages-examples) de GitHub.
+Un ejemplo para nuestro proyecto, que ya contiene un sitio estático en la carpeta `/web`, podría ser el siguiente:
 
-##### Características principales de GitHub Pages
+```yaml
+image: alpine:latest
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r web/* .public
+  artifacts:
+    paths:
+      - .public
+  only:
+    - main
+```
 
-- **Fácil de usar**: Puedes crear y publicar un sitio web con solo unos pocos clics desde la interfaz de GitHub.
-- **Integración con GitHub**: Los sitios web se generan directamente desde los archivos en tu repositorio, lo que facilita la actualización y el mantenimiento del contenido.
-- **Soporte para Jekyll**: GitHub Pages tiene soporte integrado para Jekyll, un generador de sitios estáticos que permite crear sitios web a partir de archivos Markdown y plantillas.
-- **Personalización de dominios**: Puedes usar un dominio personalizado para tu sitio web de GitHub Pages.
-- **HTTPS**: GitHub Pages ofrece soporte para HTTPS, lo que garantiza que tu sitio web sea seguro.
-- **Gratuito**: GitHub Pages es un servicio gratuito, lo que lo hace accesible para desarrolladores y proyectos de código abierto.
+#### Sitios Web y GitLab Pages
 
-##### Cómo crear un sitio web con GitHub Pages
+Los generadores de sitios web estáticos como Jekyll, Hugo, Gatsby, Next.js y otros pueden integrarse fácilmente con GitLab Pages para publicar sitios web. Aquí hay algunos ejemplos:
 
-1. **Crear un repositorio**: Crea un nuevo repositorio en GitHub o usa uno existente.
-2. **Agregar contenido**: Agrega los archivos HTML, CSS, JavaScript o Markdown que deseas publicar en tu sitio web. Si usas Jekyll, puedes agregar archivos Markdown y plantillas. Puedes incluir el contenido en una rama especifica, en la raíz del repositorio (root) o en una carpeta llamada `docs`.
-3. **Configurar GitHub Pages**: Ve a la configuración del repositorio, desplázate hacia abajo hasta la sección "GitHub Pages" y selecciona la rama y la carpeta desde la que deseas publicar tu sitio web (por ejemplo, la rama `main` y la carpeta `/root` o `/docs`). Otra alternativa que aparece en la configuración en utilizar una gitHub Action para publicar el sitio web. Por defecto aparece la action de Jekyll o la apropiada según el contenido del repositorio (Next.js, Gatsby, Astro...).
-4. **Publicar el sitio web**: Una vez que hayas configurado GitHub Pages, GitHub generará automáticamente tu sitio web y te proporcionará una URL para acceder a él (por ejemplo, `https://tu-usuario.github.io/tu-repositorio`).
-5. **Personalizar el dominio (opcional)**: Si deseas usar un dominio personalizado, puedes configurar un archivo `CNAME` en tu repositorio con el nombre de tu dominio y actualizar la configuración de DNS en tu proveedor de dominio.
-6. **Actualizar el contenido**: Para actualizar tu sitio web, simplemente realiza cambios en los archivos de tu repositorio y haz un commit. GitHub Pages regenerará automáticamente tu sitio web con los cambios.
-
-#### Sitios Web y GitHub Pages
-
-Los generadores de sitios web estáticos como Jekyll, Hugo, Gatsby, Next.js y otros pueden integrarse fácilmente con GitHub Pages para publicar sitios web. Aquí hay algunos ejemplos:
-
-- **Jekyll**: Jekyll es el generador de sitios estáticos predeterminado para GitHub Pages. Puedes crear un sitio web con Jekyll y publicarlo directamente desde tu repositorio de GitHub.
-- **Hugo**: Hugo es otro generador de sitios estáticos popular que puedes usar para crear sitios web y publicarlos en GitHub Pages.
-- **Gatsby**: Gatsby es un generador de sitios web basado en React que también puede integrarse con GitHub Pages para publicar sitios web.
-- **Next.js**: Next.js es un framework de React que permite la generación de sitios estáticos y puede usarse para crear sitios web que se publiquen en GitHub Pages.
-- **Astro**: Astro es un moderno generador de sitios estáticos que soporta múltiples frameworks y puede integrarse con GitHub Pages para publicar sitios web.
-- **Otros generadores**: Otros generadores de sitios estáticos como Eleventy, VuePress, Docusaurus y más también pueden integrarse con GitHub Pages para publicar sitios web.
+- **Jekyll**: Jekyll es el generador de sitios estáticos predeterminado para GitLab Pages. Puedes crear un sitio web con Jekyll y publicarlo directamente desde tu repositorio de GitLab.
+- **Hugo**: Hugo es otro generador de sitios estáticos popular que puedes usar para crear sitios web y publicarlos en GitLab Pages.
+- **Gatsby**: Gatsby es un generador de sitios web basado en React que también puede integrarse con GitLab Pages para publicar sitios web.
+- **Next.js**: Next.js es un framework de React que permite la generación de sitios estáticos y puede usarse para crear sitios web que se publiquen en GitLab Pages.
+- **Astro**: Astro es un moderno generador de sitios estáticos que soporta múltiples frameworks y puede integrarse con GitLab Pages para publicar sitios web.
+- **Otros generadores**: Otros generadores de sitios estáticos como Eleventy, VuePress, Docusaurus y más también pueden integrarse con GitLab Pages para publicar sitios web.
 
 ## Día 5
 
-### GitHub (Continuación)
-
-#### GITHUB PAGES. Practicas
-
-##### Crear un sitio web con Astro y publicarlo en GitHub Pages
-
-Para crear un sitio con Astro y publicarlo en GitHub Pages, puedes seguir estos pasos:
-
-1. **Crear un nuevo proyecto Astro**: Si no tienes Astro instalado, primero instala Node.js y luego ejecuta el siguiente comando para crear un nuevo proyecto Astro:
-
-   ```bash
-   npm create astro@latest
-   ```
-
-   Sigue las instrucciones para configurar tu proyecto.
-
-2. **Desarrollar tu sitio web**: Navega al directorio de tu proyecto y comienza a desarrollar tu sitio web utilizando Astro. Puedes agregar páginas, componentes y estilos según tus necesidades.
-
-   ```bash
-   cd nombre-de-tu-proyecto (e.g. demo-astro-indra)
-   npm install
-   npm run dev
-   ```
-
-   Esto iniciará un servidor de desarrollo y podrás ver tu sitio web en `http://localhost:3000`.
-
-3. **Configurar la publicación en GitHub Pages**: Para publicar tu sitio web en GitHub Pages, necesitas configurar tu proyecto Astro para que genere los archivos estáticos en una carpeta específica. Abre el archivo `astro.config.mjs` y agrega o modifica la configuración de salida:
-
-   ```javascript
-   export default {
-     output: "static",
-     site: "https://alce65.github.io",
-     base: "/demo-astro-indra",
-     outDir: "./docs",
-     build: {
-       assets: "assets", // Cambia _astro por assets para GitHub Pages
-     },
-     // Otras configuraciones...
-   };
-   ```
-
-   Así la carpeta de salida esté configurada correctamente. Por defecto, Astro genera los archivos estáticos en la carpeta `dist`, pero lo hemos cambiado a `docs` para que GitHub Pages pueda servirlos directamente desde allí.
-
-   Luego, construye tu proyecto para generar los archivos estáticos:
-
-   ```bash
-   npm run build
-   ```
-
-   Esto generará los archivos estáticos en la carpeta `docs`.
-
-   Dentro de la aplicación, los url a las páginas y recursos deben ser relativos, para que funcionen correctamente cuando se publiquen en GitHub Pages, incluyendo la base URL. Para ello podemos usar la variable `import.meta.env.BASE_URL` que Astro proporciona para manejar la base URL. Asegúrate de que todos los enlaces y rutas en tu sitio web sean relativos y no absolutos.
-
-   Por ejemplo, si tienes una página llamada `about.astro`, el enlace a esa página debería ser `${import.meta.env.BASE_URL}/about` en lugar de una ruta absoluta.
-
-4. **Crear un repositorio en GitHub**: Crea un nuevo repositorio en GitHub donde alojarás tu sitio web. Puedes hacerlo desde la interfaz web de GitHub.
-
-5. **Agregar tu proyecto al repositorio**: Inicializa un repositorio Git en tu proyecto Astro, agrega los archivos y haz un commit:
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
-
-   Luego, agrega el repositorio remoto de GitHub y empuja tus cambios:
-
-   ```bash
-   git remote add origin <URL_DEL_REPOSITORIO>
-   git branch -M main
-   git push -u origin main
-   ```
-
-6. **Configurar GitHub Pages**: Ve a la configuración de tu repositorio en GitHub, desplázate hasta la sección "GitHub Pages" y selecciona la rama `main` y la carpeta `/docs` como fuente para GitHub Pages. Guarda los cambios.
-
-7. **Publicar el sitio web**: GitHub generará automáticamente tu sitio web y te proporcionará una URL para acceder a él (por ejemplo, `https://tu-usuario.github.io/tu-repositorio`).
-
-Para más información sobre el despliegue de Astro en GitHub Pages, puedes consultar la [documentación oficial de Astro](https://docs.astro.build/en/guides/deploy/github/).
-
-#### GitHub CLI (continuación)
-
-Incluir contenido omitido el día anterior
-
-#### Releases (Liberaciones)
+### Releases (Liberaciones)
 
 Las **releases** (liberaciones) son versiones oficiales del software que se publican para los usuarios finales. Representan puntos específicos en el desarrollo del proyecto donde el código es considerado estable y listo para su uso en producción.
 
@@ -3262,7 +3093,7 @@ Una release es una versión empaquetada y etiquetada del software que incluye:
 - **Assets**: archivos binarios compilados, instaladores, paquetes
 - **Metadatos**: información sobre la versión, fecha de lanzamiento, autor
 
-##### Tipos de releases
+#### Tipos de releases
 
 Siguiendo el estándar de **Versionado Semántico** (SemVer), las releases se clasifican en:
 
@@ -3287,7 +3118,7 @@ v2.0.0-beta.1  # Pre-release
 # 1.1.0 → 2.0.0 (major: cambios incompatibles)
 ```
 
-##### Relación entre tags y releases
+#### Relación entre tags y releases
 
 Las releases están estrechamente vinculadas con los **tags** de Git:
 
@@ -3328,7 +3159,7 @@ git log v1.1.0..v1.2.0 --oneline
 git checkout v1.2.0
 ```
 
-##### Buenas prácticas y opciones para releases
+#### Buenas prácticas y opciones para releases
 
 - Versionado semántico
 - Notas de la versión claras
@@ -3385,7 +3216,7 @@ Algunas herramientas útiles para gestionar releases de forma automatizada:
 - **standard-version**: Generación automática de CHANGELOG
 - **release-please**: Herramienta de Google para automatizar releases
 
-##### Flujo de trabajo para releases con Git usando GitFlow
+#### Flujo de trabajo para releases con Git usando GitFlow
 
 [1]. Preparación de la release
 
@@ -3422,7 +3253,7 @@ git tag -a v1.2.0 -m "Release v1.2.0 - Nueva funcionalidad de exportación"
 git push origin main
 git push origin v1.2.0
 
-# 4. Crear release en GitHub (manual o automatizada)
+# 4. Crear release en GitLLab (manual o automatizada)
 ```
 
 [3]. Post-release
@@ -3438,13 +3269,13 @@ git branch -d release/v1.2.0
 # 3. Notificar al equipo y usuarios
 ```
 
-##### Gestión de releases en las plataformas GitHub/GitLab
+#### Gestión de releases en las plataformas GitHub/GitLab
 
 - Interfaz web intuitiva
 - Integración con GitHub Actions
 - Assets automáticos desde releases
 
-###### Crear una release en GitHub
+##### Crear una release en GitHub (será similar en GitLab)
 
 Desde la interfaz web
 
@@ -3470,21 +3301,7 @@ Desde la interfaz web
    - **Latest release**: Automáticamente marcada para la versión más reciente
    - **Generate release notes**: GitHub puede generar notas automáticamente
 
-Desde línea de comandos con GitHub CLI
-
-```shell
-# Instalar GitHub CLI primero
-# Crear una release
-gh release create v1.2.0 --title "Version 1.2.0" --notes "Descripción de los cambios"
-
-# Crear release con archivos adjuntos
-gh release create v1.2.0 --title "Version 1.2.0" --notes-file CHANGELOG.md ./dist/*
-
-# Crear pre-release
-gh release create v1.2.0-beta --title "Version 1.2.0 Beta" --prerelease
-```
-
-###### Crear una release con el GitLab CLI
+##### Crear una release con el GitLab CLI
 
 ```shell
 # Crear release con GitLab CLI
@@ -3493,9 +3310,449 @@ glab release create v1.2.0 --name "Version 1.2.0" --notes "Release notes"
 
 ### CI/CD
 
-Ver documento aparte: [CI/CD](./ci-cd.md)
+La **integración continua** (CI) y la **entrega/despliegue continuo** (CD) son prácticas de desarrollo de software que permiten automatizar la **construcción**, las **pruebas** y el **despliegue a producción** de aplicaciones de forma rápida y segura. Estas prácticas permiten a los equipos de desarrollo y operaciones colaborar de manera más eficiente y entregar software de alta calidad de forma más rápida y predecible.
+
+- Integración: ejecución automática de pruebas al hacer cambios en el código.
+- Entrega/Despliegue: envío del código validado a producción u otros entornos sin intervención manual.
+
+Los servicios de CI/CD salvan las distancias entre las actividades y los equipos de desarrollo y operación, al imponer la automatización en la construcción, las pruebas y el despliegue de las aplicaciones, en el marco de los procesos conocidos como DevOps.
+
+La **integración continua** (CI) es una práctica de desarrollo de software en la que los miembros de un equipo integran su trabajo con frecuencia en un repositorio, incluso varias veces al día. Cada integración se verifica mediante la **construcción automatizada** y las **pruebas unitarias**, lo que permite detectar errores rápidamente y corregirlos antes de que se conviertan en problemas mayores.
+
+Una primera etapa de este proceso puede tener lugar a **nivel local**, en el equipo de cada desarrollador, vinculado al proceso de creación de los commits. En este caso, se pueden utilizar herramientas como **Husky** para ejecutar pruebas unitarias y de estilo de código antes de realizar un commit, o **Lint-staged** para ejecutar pruebas de estilo de código en los archivos que se han modificado.
+
+Los estilos de código, generalmente aceptados por la comunidad o consensuados a nivel de equipo, pueden quedar
+definidos en archivos de configuración como `.eslintrc` o `.prettierrc`, y pueden ser verificados automáticamente con herramientas como **ESLint** o **Prettier**. Aunque estas herramientas disponen de plugins que permiten su integración en el IDE (por ejemplo, **VSCode**), también pueden ser configuradas para que se ejecuten automáticamente en cada commit, o en un paso previo a la integración continua, por ejemplo utilizando Husky.
+
+Una vez que el código ha sido integrado en el repositorio, se puede proceder a la **integración continua** propiamente dicha, a **nivel del servidor de integración continua**. En este servidor, se ejecutan las pruebas de integración, las pruebas de regresión y las pruebas de aceptación, y se generan los artefactos de construcción que se utilizarán en el despliegue a producción.
+
+La **entrega continua** (CD) es una extensión de la integración continua que automatiza el despliegue de software en entornos de prueba y producción. Con la entrega continua, cada cambio en el código se despliega automáticamente en un entorno de prueba, donde se ejecutan pruebas automatizadas para verificar su funcionamiento. Si las pruebas son exitosas, el cambio se despliega automáticamente en producción, lo que permite a los equipos de desarrollo entregar software de alta calidad de forma rápida y segura.
+
+![CI/CD Flow](assets/ci.cd.png)
+
+#### Herramientas de CI/CD a nivel servidor
+
+Existen muchas herramientas que permiten implementar un servidor CI/CD en un proyecto, algunas de las más populares son:
+
+- **Jenkins**: Es una herramienta de automatización de código abierto que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones.
+- **Travis CI**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones.
+- **CircleCI**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones.
+
+Otros servicios de CI/CD vinculados a plataformas concretas de hosting de repositorios y aplicaciones son:
+
+- **GitHub Actions**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones directamente desde GitHub.
+- **GitLab CI/CD**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones directamente desde GitLab.
+- **AWS CodePipeline**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones en AWS.
+- **Azure DevOps**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones en Azure.
+- **Google Cloud Build**: Es un servicio de integración continua basado en la nube que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones en Google Cloud.
+- **Bamboo**: Es una herramienta de integración continua y entrega continua de Atlassian que permite a los equipos de desarrollo automatizar la construcción, las pruebas y el despliegue de aplicaciones.
+
+En definitiva, todas estas herramientas lo que proporcionan es un entorno virtualizado () en el que se ejecutan los scripts de construcción, pruebas y despliegue de la aplicación, y que se configura para que se ejecute automáticamente en respuesta a eventos específicos, como la integración de código en un repositorio o la creación de una solicitud de extracción.
+
+#### CI/CD en GitLab. GitHub Pipelines
+
+El entrono de GitLab es muy similar al de GitHub, como son servicios de hosting de repositorios Git basados en la nube junto con herramientas de colaboración.
+
+Como diferencia:
+
+- GitLab permite agrupar varios proyectos (repositorios) en un mismo grupo, lo que facilita la gestión de permisos y la organización de los proyectos.
+- GitLab incluye una herramienta llamada Repository graph, que permite visualizar la estructura de los repositorios y sus relaciones.
+- En GitLab las menciones implican un Assign To-Do que crea una tarea pendiente para el usuario mencionado.
+
+Sin embargo, la solución completa de **CI/CD integrada** con los repositorios, sin necesidad de herramientas externas, es diferente en cada uno de los servicios.
+Veremos a continuación la que ofrece GitLab.
+
+##### Configuración de un pipeline
+
+Para activar CI/CD en GitLab, se debe crear un archivo llamado `.gitlab-ci.yml` en la raíz del repositorio.
+
+Estructura básica
+
+```yaml
+stages:
+  - build
+  - test
+  - deploy
+
+build_job:
+  stage: build
+  script:
+    - echo "Compilando el proyecto"
+
+test_job:
+  stage: test
+  script:
+    - echo "Ejecutando pruebas"
+
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Desplegando a producción"
+  only:
+    - main
+```
+
+Explicación:
+
+- Stages
+  - define las fases del pipeline, agrupando los jobs en etapas o secciones lógicas (test, build...).
+  - las sucesivas stages se ejecutan en orden, secuencialmente
+- Jobs
+
+  - cada bloque de instrucciones (conjunto de keywords) que se ejecuta en una etapa específica, por parte de un GitLab Runner (agente remoto).
+  - los distintos jobs de una misma stage se ejecutan en paralelo.
+  - cuando concluyen con éxito todos los jobs de una stage, se pasa a la siguiente.
+  - si alguno de los jobs falla, generalmente detiene el pipeline.
+
+- [Keywords de un job](https://docs.gitlab.com/ci/yaml/):
+
+  - image: define la imagen de Docker que se usará para ejecutar el job, por defecto desde DockerHub, pero opcionalmente de otras fuentes. Pueden ser globales o específicas de cada job
+  - script: comandos a ejecutar en un job. Pueden indicarse los comandos o una llamada a un script del shell. Es la parte mandatoria del job.
+  - service: define servicios adicionales necesarios (ej. una imagen de base de datos).
+  - variables: variables de entorno para el job o globales a todos los jobs. Como veremos, pueden venir definidas desde la UI de GitLab
+  - artifacts: para conservar archivos entre jobs.
+  - cache: para almacenar archivos entre ejecuciones del pipeline, acelerando la ejecución de los jobs.
+  - rules: control avanzado de condiciones de ejecución.
+  - tags: para ejecutar en runners específicos.
+  - only: especifica en qué ramas se ejecuta. Deprecado en favor de rules.
+  - when: manual permite ejecutar el despliegue desde la interfaz cuando se desee.
+
+Formas de iniciar el pipeline:
+
+- Push a una rama (ej. main, develop).
+- Manualmente desde la interfaz de GitLab.
+- Programado para ejecutarse en intervalos regulares.
+- Disparado por otro pipeline, incluso de otro proyecto.
+
+##### Artefactos y dependencias entre jobs
+
+Un job puede generar artefactos (archivos) que serán necesarios en jobs posteriores. Para definir artefactos en un job, se utiliza la keyword `artifacts`:
+
+```yaml
+build_job:
+  stage: build
+  script:
+  script:
+    - echo "Compilando el proyecto"
+    - echo "Generando archivos..."
+    - mkdir -p dist
+    - echo "Archivo generado" > dist/archivo.txt
+  artifacts:
+    paths:
+      - dist/
+```
+
+En jobs posteriores, se pueden usar los artefactos generados:
+
+```yaml
+test_job:
+  stage: test
+  script:
+    - cat dist/archivo.txt
+  dependencies:
+    - build_job
+```
+
+##### Test values and variables
+
+Se pueden definir variables de entorno globales o específicas de cada job. Ejemplo:
+
+```yaml
+variables:
+  MY_WORD: "any text"
+
+stages: # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+build-job: # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - echo "Compile complete."
+    - echo "Text sample with the word $MY_WORD"  | tee file.txt
+  artifacts:
+    paths:
+      - "file.txt"
+
+file-test-job: # This job runs in the test stage.
+  stage: test # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Test file creation in artefact."
+    - cat file.txt
+  dependencies:
+    - "build-job"
+
+unit-test-job: # This job runs in the test stage.
+  stage: test # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 6 seconds."
+    - sleep 6
+    - echo "Testing for the string gitlab"
+    - grep "gitlab" file.txt
+  dependencies:
+    - "build-job"
+
+lint-test-job: # This job also runs in the test stage.
+  stage: test # It can run at the same time as unit-test-job (in parallel).
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
+```
+
+##### Prepare deployment
+
+Se pueden definir variables de entorno globales o específicas de cada job. Ejemplo:
+
+```yaml
+default:
+  image: "alpine:latest"
+
+stages: # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+render_md-job: # This job runs in the build stage, which runs first.
+  stage: build
+  script:
+    - apk add markdown
+    - markdown README.md | tee index.html
+  artifacts:
+    paths:
+      - "index.html"
+
+lint-test-job: # This job runs in the test stage.
+  stage: test # It only starts when the job in the build stage completes successfully.
+  script:
+    - apk add libxml2-utils
+    - echo "Test file creation in artefact."
+    - xmllint --html index.html
+  dependencies:
+    - "render_md-job"
+
+deploy-job: # This job also runs in the test stage.
+  stage: deploy # It can run at the same time as unit-test-job (in parallel).
+  environment:
+    name: production
+    url: https://my-production-site.com
+  script:
+    - echo "Deploying to production server..."
+```
+
+##### Despliegue automático
+
+Se puede configurar un job para hacer deploys automáticos a diferentes entornos (staging, producción, etc.).
+
+Ejemplo con despliegue simulado:
+
+```yaml
+deploy_to_staging:
+  stage: deploy
+  script:
+    - ./scripts/deploy.sh staging
+  environment:
+    name: staging
+  only:
+    - develop
+
+deploy_to_production:
+  stage: deploy
+  script:
+    - ./scripts/deploy.sh production
+  environment:
+    name: production
+    url: https://mi-app.com
+  only:
+    - main
+  when: manual
+```
+
+##### Gestión de variables y secretos
+
+GitLab permite definir variables de entorno desde la interfaz web o el archivo CI para almacenar:
+
+- Tokens de acceso (API keys, secretos).
+- Configuración del entorno (host, puertos, contraseñas).
+- Variables personalizadas.
+
+Definir en .gitlab-ci.yml (no recomendado para secretos):
+
+```yaml
+variables:
+  NODE_ENV: production
+  API_URL: https://api.miapp.com
+```
+
+Definir en la interfaz:
+
+Ir a Settings > CI/CD > Variables.
+
+Añadir variables seguras como API_KEY, DB_PASSWORD, etc.
+
+Activar Protect variable para limitar su uso a ramas protegidas.
+
+Uso en el script:
+
+```yaml
+script:
+  - curl -H "Authorization: Bearer $API_KEY" $API_URL
+```
+
+##### Buenas prácticas en CI/CD en GitLLab
+
+- Usar rules en lugar de only/except para mayor flexibilidad.
+- Proteger ramas y runners para evitar ejecuciones no deseadas.
+- Usar entornos (environment:) para distinguir producción y staging.
+- Usar variables protegidas para tokens sensibles.
+- Utilizar caché y artifacts para acelerar pipelines.
 
 ## Apéndices
+
+### Worktrees
+
+Los worktrees son una funcionalidad de Git que apareció en la versión 2.5 (2015) y permite tener múltiples working areas asociadas a un mismo repositorio. Cada worktree tiene su propia rama y su propio HEAD, pero comparten el mismo historial de commits.
+
+Esta característica es especialmente útil cuando necesitas trabajar en múltiples ramas simultáneamente sin tener que hacer constantemente `git checkout` o `git stash`.
+
+#### Casos de uso comunes
+
+- **Desarrollo paralelo**: Trabajar en una nueva feature mientras mantienes la posibilidad de hacer hotfixes en main
+- **Testing**: Probar diferentes versiones del código sin afectar tu trabajo actual
+- **Code review**: Revisar pull requests mientras continúas desarrollando
+- **Builds**: Mantener un worktree dedicado para builds de producción
+
+#### Operaciones básicas con worktrees
+
+Para crear un worktree se utiliza el comando `git worktree add`:
+
+```shell
+git worktree add <directorio> <rama>
+```
+
+Es una buena práctica que el directorio del worktree esté fuera del directorio del repositorio principal:
+
+```shell
+git worktree add ../feature/feature-xyz feature/feature-xyz
+```
+
+#### Comandos principales
+
+**Crear un nuevo worktree:**
+
+```shell
+# Crear worktree en directorio específico con rama existente
+git worktree add ../hotfix hotfix/bug-123
+
+# Crear worktree con nueva rama
+git worktree add -b nueva-feature ../feature main
+
+# Crear worktree temporal (se eliminará automáticamente)
+git worktree add --detach ../temp HEAD~2
+```
+
+**Listar worktrees existentes:**
+
+```shell
+git worktree list
+git worktree list --porcelain  # Formato más detallado
+```
+
+**Información de un worktree:**
+
+```shell
+# Muestra el path, la rama y el commit
+git worktree list -v
+```
+
+**Eliminar un worktree:**
+
+```shell
+# Desde el repositorio principal
+git worktree remove ../feature/feature-xyz
+
+# Forzar eliminación (incluso con cambios no guardados)
+git worktree remove --force ../feature/feature-xyz
+```
+
+**Limpiar worktrees eliminados manualmente:**
+
+```shell
+git worktree prune
+```
+
+**Mover un worktree:**
+
+```shell
+git worktree move ../old-location ../new-location
+```
+
+#### Ejemplo práctico
+
+```shell
+# Situación inicial: trabajando en feature-login
+git branch
+# * feature-login
+#   main
+
+# Llega un bug crítico que hay que arreglar en main
+# En lugar de hacer stash y checkout, creamos un worktree
+git worktree add ../hotfix main
+
+# Cambiamos al directorio del hotfix
+cd ../hotfix
+
+# Trabajamos en el hotfix
+echo "bug fix" >> bugfix.txt
+git add bugfix.txt
+git commit -m "Fix critical bug"
+
+# Subimos el hotfix
+git push origin main
+
+# Volvemos a nuestro trabajo original
+cd ../proyecto-principal
+
+# El worktree de hotfix ya no es necesario
+git worktree remove ../hotfix
+```
+
+#### Limitaciones y consideraciones
+
+- **No se pueden tener múltiples worktrees** en la misma rama (excepto en modo detached)
+- **Los hooks se comparten** entre todos los worktrees
+- **La configuración se comparte** entre todos los worktrees
+- **Los reflog son independientes** para cada worktree
+- **Cuidado con operaciones destructivas** como `git reset --hard` que afectan solo al worktree actual
+
+#### Integración con IDEs
+
+Muchos IDEs modernos soportan worktrees:
+
+- **VS Code**: Detecta automáticamente los worktrees y permite alternar entre ellos
+- **IntelliJ IDEA**: Soporte nativo para worktrees desde la versión 2021.2
+- **Vim/Neovim**: Plugins como `vim-fugitive` tienen soporte para worktrees
+
+#### Comandos relacionados útiles
+
+```shell
+# Ver en qué worktree estamos
+git rev-parse --show-toplevel
+
+# Ver información del repositorio principal
+git worktree list | head -1
+
+# Crear worktree temporal para builds
+git worktree add --detach ../build-temp v1.2.3
+cd ../build-temp
+npm run build
+cd ../proyecto-principal
+git worktree remove ../build-temp
+```
+
+Los worktrees son una herramienta poderosa que puede mejorar significativamente la productividad cuando se necesita trabajar con múltiples ramas de forma simultánea, evitando la necesidad de múltiples clones del repositorio.
 
 ### SUB-PROYECTOS
 
@@ -3621,3 +3878,338 @@ git commit -m "Actualizado submodule nombre_submodule"
 ```
 
 Cuando otros usuarios han actualizado los submodulos y lo han reflejado en el repo compartido, al hacer un `git pull` en el repositorio principal, los submodules no se actualizan automáticamente. Se debe hacer un `git pull --recurse-submodules` para actualizar los submodules a la versión que indica el repositorio principal.
+
+### Integración continua a nivel local
+
+#### Análisis estático de código: ESLint y Prettier
+
+Un primer nivel de análisis y corrección de errores en el código fuente se puede realizar a nivel local, en el equipo de cada desarrollador, utilizando herramientas como [**ESLint**](https://eslint.org/) y [**Prettier**](https://prettier.io/).
+
+**Prettier** es una herramienta de formateo de código para JavaScript que permite aplicar un estilo de código consistente y legible en todo el proyecto. Se define a si misma como "opinionated code formatter". es decir un formateador de código con opiniones, que se basa en una serie de reglas predefinidas y que no recomienda la personalización de las mismas, aunque si lo permite.
+
+**ESLint** es un "linter" de código, una herramienta de análisis estático de código para JavaScript que permite identificar y corregir errores de sintaxis, errores de estilo y errores de lógica en el código fuente. Podría entenderse como un paso más allá de Prettier, y también permite la personalización de las reglas de estilo y la definición de reglas de calidad de código.
+
+Prettier y ESLint disponen de plugins que facilitan su integración en el IDE (por ejemplo, VSCode), se pueden ejecutar desde linea de comandos y también pueden ser configurados para que se ejecuten automáticamente en cada commit, o en un paso previo a la integración continua, por ejemplo utilizando Husky.
+
+#### Instalación y configuración de Prettier
+
+Para instalar Prettier en un proyecto, se pueden ejecutar los siguientes comandos:
+
+```sh
+npm install -D prettier
+```
+
+Para configurar Prettier, se puede crear un archivo de configuración `.prettierrc` en el directorio raíz del proyecto, que contiene la configuración de Prettier para el proyecto.
+
+Como en otros casos casos, el fichero de configuración pueden sustituirse por configuraciones añadidas en el archivo `package.json` del proyecto, en la sección `prettier`.
+
+Por ejemplo, para modificar los valores por defecto de Prettier para que formatee el código de JS/TS utilizando comillas simples y sin punto y coma al final de las líneas, se puede añadir la siguiente configuración en el archivo `package.json`:
+
+```json
+// package.json
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  }
+```
+
+#### Instalación y configuración de ESLint
+
+A la hora de utilizar ESLint en un proyecto, hay que tener en cuenta los cambios introducidos en la versión 9.x, que han simplificado la instalación y configuración de ESLint en un proyecto, pero provocando serios problemas de retrocompatibilidad con las versiones anteriores.
+
+Hasta la versión 9, para instalar ESLint en un proyecto, se solía ejecutar el siguiente comando:
+
+```sh
+npm install -D eslint
+```
+
+A continuación, se puede configurar ESLint ejecutando el siguiente comando:
+
+```sh
+npx eslint --init
+```
+
+Las nuevas versiones 9.x proporciona un comando que combina la instalación y la configuración en un solo paso, por lo que se puede ejecutar el siguiente comando:
+
+```sh
+npm init @eslint/config@latest
+```
+
+En cualquiera de los dos casos la configuración se hace mediante un asistente que permite seleccionar las características de ESLint en el proyecto. En las versiones previas a la 9.x esto incluía el conjunto de reglas de estilo, mientras que en las versiones 9.x se selecciona un conjunto de reglas predefinidas, como `pluginJs.configs.recommended`.
+
+Como consecuencia se crea un archivo de configuración `.eslintrc` o `eslint.config.mjs` en el directorio raíz del proyecto, que contiene la configuración de ESLint para el proyecto.
+
+Si se utilizan ambos, Prettier y ESLint, en un proyecto, es recomendable instalar el plugin `eslint-config-prettier` y añadirlo a la configuración de ESLint, para que ESLint no aplique reglas que entren en conflicto con Prettier.
+
+```sh
+npm install -D eslint-config-prettier
+```
+
+En ESLInt previo a la versión 9.x, se añade a la configuración de ESLint en el archivo `.eslintrc`, como último de los extends:
+
+```json
+// .eslintrc
+{
+  "extends": ["eslint:recommended", "prettier"]
+}
+```
+
+En ESLint versión 9.x, se añade a la configuración de ESLint en el archivo `eslint.config.mjs`, también en último lugar:
+
+```js
+// .eslint.config.js
+export default [
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
+  pluginJs.configs.recommended,
+  eslintConfigPrettier,
+];
+```
+
+#### Git Hooks
+
+Los hooks son scripts que se ejecutan automáticamente en determinados momentos del ciclo de vida de un repositorio Git. Permiten automatizar tareas, como la validación de código, la ejecución de tests, el envío de notificaciones, etc.
+
+Podemos encontrar información sobre su funcionamiento
+
+- en la documentación oficial de Git: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+- el el libro Pro Git: https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
+
+Al inicializar un nuevo repositorio con `git init`, Git llena el directorio de hooks `.git/hooks` con varios scripts de ejemplo, muchos de los cuales son útiles por sí mismos; además, documentan los valores de entrada de cada script. Todos los ejemplos están escritos como `scripts de shell`, con algo de `Perl`, pero cualquier script ejecutable con un nombre correcto funcionará correctamente; (`Ruby`, `Python`...). Si quieres usar los scripts de hook incluidos, tendrás que renombrarlos; todos sus nombres de archivo terminan en .sample.
+
+Los hooks que se encuentran inicialmente en el directorio `.git/hooks` del repositorio son los siguientes:
+
+- prepare-commit-msg.sample -> Preparar el mensaje de commit
+- commit-msg.sample -> Validar el mensaje de commit
+- pre-commit.sample -> Validar los cambios antes de hacer un commit
+- push-to-checkout.sample -> Validar los cambios antes de hacer un checkout
+- pre-merge-commit.sample -> Validar los cambios antes de hacer un merge
+- pre-rebase.sample -> Validar los cambios antes de hacer un rebase
+- pre-push.sample -> Validar los cambios antes de hacer un push
+- pre-receive.sample -> Validar los cambios antes de recibir un push
+
+- update.sample -> Validar los cambios antes de hacer un update
+- post-update.sample -> Notificar a los usuarios sobre actualizaciones
+- applypatch-msg.sample -> Validar los mensajes de los parches aplicados
+- pre-applypatch.sample -> Validar los parches antes de aplicarlos
+- fsmonitor-watchman.sample -> Integración con Watchman para mejorar el rendimiento de git status
+- sendemail-validate.sample -> Validar los correos electrónicos enviados
+
+Estos hooks se pueden clasificar en dos tipos:
+
+- hooks de lado cliente: commits, emails, rebase, ...
+- hooks de lado servidor: prereceive, postreceive, update
+
+Los hooks de lado cliente se ejecutan en el equipo del desarrollador y permiten validar los cambios antes de hacer un commit, un push, un rebase, etc.
+Los hooks de lado servidor se ejecutan en el servidor y permiten validar los cambios antes de recibir un push, notificar a los usuarios sobre actualizaciones, etc.
+
+##### Husky
+
+[Husky](https://typicode.github.io/husky/) es una herramienta que permite ejecutar scripts de cualquier lenguaje de scripting (por ejemplo Node.js) en respuesta a eventos de Git. Para ello se aprovechan los [**hooks** de Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks), que son scripts que en función de su nombre, se ejecutan automáticamente en respuesta a eventos específicos, como `pre-commit`, `prepare-commit-msg`, `commit-msg` y `post-merge`.
+
+Husky puede utilizarse para ejecutar pruebas unitarias y de estilo de código antes de realizar un commit, o para ejecutar pruebas de estilo de código en los archivos que se han modificado.
+
+#### Instalación y configuración de Husky
+
+Para instalar Husky en un proyecto, se puede ejecutar el siguiente comando:
+
+```sh
+npm install -D husky
+```
+
+A continuación, se puede configurar Husky ejecutando el siguiente comando:
+
+```sh
+npx husky init
+```
+
+Como consecuencia de crea un script `pre-commit` y se añade o se actualiza en el archivo `package.json` el script `prepare`:
+
+```json
+// package.json
+  "scripts": {
+    "test": "node --test",
+    "prepare": "husky"
+  }
+```
+
+```script
+// .husky/pre-commit
+npm test
+```
+
+En este caso, el script `pre-commit` ejecuta el script `test` definido en el archivo `package.json`.
+El valor por defecto de ese script, en lugar de ejecutar las pruebas unitarias, incluye un mensaje y un código de salida.
+
+```json
+// package.json
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+```
+
+Si el código de salida es 1, estamos simulando un error en las pruebas unitarias, lo que provocará que Husky impida que el commit se realice. De esta forma podemos comp`robar fácilmente el correcto funcionamiento de Husky.
+
+#### Ejemplos de scrips para Husky
+
+Para el hook commit-msg, podemos forzar que el mensaje del commit tenga una longitud entre 10 y 72 caracteres, mediante el siguiente script:
+
+```sh
+// .husky/commit-msg
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+while read line; do
+    ## Skip comments
+    if [ "${line:0:1}" == "#" ]; then
+        continue
+    fi
+    if [ ${#line} -ge 72 ] || [ ${#line} -le 10 ]; then
+        echo -e "\033[0;31mThe length of the message has to be between 10 and 72 characters."
+        exit 1
+    fi
+done < "${1}"
+
+exit 0
+```
+
+Para el hook pre-commit, podemos forzar que se ejecute un script de linting antes de cada commit, mediante el siguiente script:
+
+```sh
+// .husky/pre-commit
+npm run lint
+```
+
+Para el hook pre-push, podemos forzar que el nombre de la rama cumpla con un patrón específico, mediante el siguiente script:
+
+```sh
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_regex='^((hotfix|bugfix|feature)\/[a-zA-Z0-9\-]+)$'
+
+message="Please check your branch name."
+
+if [[ ! $local_branch_name =~ $valid_branch_regex ]]; then
+    echo -e "\033[0;31m$message"
+    exit 1
+fi
+
+exit 0
+```
+
+Para el hook post-merge, podemos forzar que se ejecute un script específico después de cada merge, mediante el siguiente script:
+
+```sh
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run post-merge
+```
+
+En el ejemplo del pre-push, al comprueba que el nombre de la rama cumpla con un patrón específico, indirectamente estamos protegiendo la rama `main` o `master` de cambios directos, ya que el nombre de la rama no cumplirá con el patrón. Los cambios en estas rama quedarían restringidos al uso de **pull requests (PR)**, que permiten revisar los cambios antes de integrarlos en la rama principal.
+
+Sin embargo tenemos que tener en cuenta que los hooks de Git son scripts que se ejecutan en el equipo de cada desarrollador, por lo que pueden ser modificados por los desarrolladores o deshabilitados añadiendo a la ejecución de los comandos de git el modificador `--no-verify`.
+
+Además, nada garantiza que los hooks de Git se compartan en todos los miembros del equipo. Por todo ello, Husky no es una solución definitiva para garantizar la calidad del código. Para ello, es necesario implementar un sistema de integración continua y entrega continua a nivel del servidor de integración continua.
+
+### Taller GitLab PAGES. Crear un sitio web con Astro y publicarlo en GitLab Pages
+
+Para crear un sitio con Astro y publicarlo en GitLab Pages, puedes seguir estos pasos:
+
+1. **Crear un nuevo proyecto Astro**: Si no tienes Astro instalado, primero instala Node.js y luego ejecuta el siguiente comando para crear un nuevo proyecto Astro:
+
+   ```bash
+   npm create astro@latest
+   ```
+
+   Sigue las instrucciones para configurar tu proyecto.
+
+2. **Desarrollar tu sitio web**: Navega al directorio de tu proyecto y comienza a desarrollar tu sitio web utilizando Astro. Puedes agregar páginas, componentes y estilos según tus necesidades.
+
+   ```bash
+   cd nombre-de-tu-proyecto (e.g. demo-astro-indra)
+   npm install
+   npm run dev
+   ```
+
+   Esto iniciará un servidor de desarrollo y podrás ver tu sitio web en `http://localhost:3000`.
+
+3. **Configurar la publicación en GitLab Pages**: Para publicar tu sitio web en GitLab Pages, necesitas configurar tu proyecto Astro para que genere los archivos estáticos en una carpeta específica. Abre el archivo `astro.config.mjs` y agrega o modifica la configuración de salida:
+
+   ```javascript
+   export default {
+     output: "static",
+     site: "https://indra-courses.gitlab.io", // "https://<grupo o user>.gitlab.io",
+     base: "/demo-astro-indra", //nombre del repositorio
+     // outDir: "./dist",
+     build: {
+       assets: "assets", // Cambia _astro por assets para GitLab Pages
+     },
+     // Otras configuraciones...
+   };
+   ```
+
+   La carpeta de salida esté configurada por defecto, Astro genera los archivos estáticos en la carpeta `dist`.
+
+   Luego, construye tu proyecto para generar los archivos estáticos:
+
+   ```bash
+   npm run build
+   ```
+
+   Esto generará los archivos estáticos en la carpeta `docs`.
+
+   Dentro de la aplicación, los url a las páginas y recursos deben ser relativos, para que funcionen correctamente cuando se publiquen en GitLab Pages, incluyendo la base URL. Para ello podemos usar la variable `import.meta.env.BASE_URL` que Astro proporciona para manejar la base URL. Asegúrate de que todos los enlaces y rutas en tu sitio web sean relativos y no absolutos.
+
+   Por ejemplo, si tienes una página llamada `about.astro`, el enlace a esa página debería ser `${import.meta.env.BASE_URL}/about` en lugar de una ruta absoluta.
+
+   Para probar que todo funciona correctamente, puedes ejecutar el siguiente comando para previsualizar tu sitio web localmente con la configuración de producción:
+
+   ```bash
+   npx astro preview
+   ```
+
+4. **Crear un repositorio en GitLab**: Crea un nuevo repositorio en GitLab donde alojarás tu sitio web. Puedes hacerlo desde la interfaz web de GitLab.
+
+5. **Agregar tu proyecto al repositorio**: Inicializa un repositorio Git en tu proyecto Astro, agrega los archivos y haz un commit:
+
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+   Luego, agrega el repositorio remoto de GitLab y empuja tus cambios:
+
+   ```bash
+   git remote add origin <URL_DEL_REPOSITORIO>
+   git branch -M main
+   git push -u origin main
+   ```
+
+6. **Configurar GitLab Pages**: Ve a la configuración de tu repositorio en GitLab, desplázate hasta la sección "GitLab Pages" y crea el fichero yaml `.gitlab-ci.yml` en la raíz de tu proyecto con el siguiente contenido:
+
+   ```yaml
+   image: node:16
+
+   pages:
+     stage: deploy
+     script:
+       - npm ci
+       - npm run build
+       # - mv dist public
+     artifacts:
+       paths:
+         # - public
+         - dist
+     only:
+       - main
+   ```
+
+   Este archivo configura un pipeline de CI/CD que instalará las dependencias, construirá el sitio web y utilizará la carpeta `dist`,para publicar el sitio.
+
+7. **Publicar el sitio web**: GitLab generará automáticamente tu sitio web y te proporcionará una URL para acceder a él (por ejemplo, `https://tu-usuario.github.io/tu-repositorio`).
+
+Para más información sobre el despliegue de Astro en GitLab Pages, puedes consultar la [documentación oficial de Astro](https://docs.astro.build/ar/guides/deploy/gitlab/).

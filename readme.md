@@ -185,6 +185,14 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 <!--
 
+Comentar
+
+Para mover una rama existente a otro commit puede forzarse que se vuelva a crear en la posición deseada
+
+```shell
+git branch -f nombre_rama_existente <nuevo commit>
+```
+
 - ### Día 7 (Miércoles 29 Octubre 2025)
 
   - Pull requests (GitHub) / Merge requests (GitLab)
@@ -196,8 +204,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 - Flujos de trabajo (workflows)
 
-  - Git Flow
-  - GitLab Flow
+  - Citar: Git Flow / GitLab Flow
   - GitHub Flow
     - Ship-Show-Ask
 
@@ -211,25 +218,24 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - merge requests: revisión de código y comentarios (v.s.)
     - MR desde ramas y forks
     - Proyectos
-      - Tableros (Boards)
-      - issues y proyectos; milestones
+      - issues y milestones
+      - To-Do lists
     - Wikis
+  - GitLab Pages
+    - Configuración y uso
+    - Práctica: publicar una web estática generada con Astro
 -->
 
 <!--
 
 - ### Día 8 (Jueves 30 Octubre 2025)
 
-- GitLab (continuación)
-  - GitLab Pages
-    - Configuración y uso
-    - Práctica: publicar una web estática generada con Astro
-  - Releases
 - Integración continua / Entrega continua (CI/CD)
   - Introducción a CI/CD
   - Configuración de un pipeline: stages y jobs
   - Artefactos
   - Variables
   - Despliegues: environments
-
+- Despliegues en GitLab
+  - Releases
 -->
