@@ -183,16 +183,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Flujo de trabajo típico
     - Revisión de código
 
-<!--
-
-Comentar
-
-Para mover una rama existente a otro commit puede forzarse que se vuelva a crear en la posición deseada
-
-```shell
-git branch -f nombre_rama_existente <nuevo commit>
-```
-
 - ### Día 7 (Miércoles 29 Octubre 2025)
 
   - Pull requests (GitHub) / Merge requests (GitLab)
@@ -208,7 +198,7 @@ git branch -f nombre_rama_existente <nuevo commit>
   - GitHub Flow
     - Ship-Show-Ask
 
-- Buenas prácticas
+- Buenas prácticas (citar)
 
 - GitLab
   - Hosting de Repositorios
@@ -223,8 +213,7 @@ git branch -f nombre_rama_existente <nuevo commit>
     - Wikis
   - GitLab Pages
     - Configuración y uso
-    - Práctica: publicar una web estática generada con Astro
--->
+    - Práctica: publicar nuestro repositorio demo
 
 <!--
 
