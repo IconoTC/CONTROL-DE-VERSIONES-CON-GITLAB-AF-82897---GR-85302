@@ -211,11 +211,12 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - issues y milestones
       - To-Do lists
     - Wikis
+  - GitLab CLI
+    - Instalación y configuración
+    - Comandos básicos
   - GitLab Pages
     - Configuración y uso
     - Práctica: publicar nuestro repositorio demo
-
-<!--
 
 - ### Día 8 (Jueves 30 Octubre 2025)
 
@@ -227,4 +228,3 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Despliegues: environments
 - Despliegues en GitLab
   - Releases
--->
